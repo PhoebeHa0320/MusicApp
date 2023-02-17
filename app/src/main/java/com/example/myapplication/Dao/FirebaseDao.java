@@ -54,7 +54,6 @@ public abstract class FirebaseDao<T> implements GenericDao<T> {
 
     public void getAll(final RetrieValEventListener<List<T>> retrievalEventListener) {
         DatabaseReference rowReference = dbReference.child(tableName);
-        rowReference.limitToLast(25);
         rowReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

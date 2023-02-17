@@ -54,27 +54,6 @@ public class ProfileActivity extends AppCompatActivity {
     User mCurrentUserDb;
     FirebaseUser mCurrentFirebaseUser;
 
-    final private ActivityResultLauncher<Intent> mActivityResultLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == RESULT_OK) {
-                        Intent intent = result.getData();
-                        if (intent == null) {
-                            return;
-                        }
-                        uri = intent.getData();
-                        try {
-                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-                            imageView.setImageBitmap(bitmap);
-                            //MainActivity.imgAvatar.setImageBitmap(bitmap);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            });
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,7 +108,7 @@ public class ProfileActivity extends AppCompatActivity {
         try {
 
             assert user != null;
-            String fileName = "Avatar_" + user.getDisplayName();
+            String fileName = "Avatar_" + user.getUid();
 
             StorageReference storageRef = FirebaseStorage.getInstance().getReference("Images/" + fileName);
             UploadTask uploadTask = storageRef.putFile(uri);
@@ -200,10 +179,28 @@ public class ProfileActivity extends AppCompatActivity {
     public void openGallery() {
         Intent intent = new Intent();
         intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
+        intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
         mActivityResultLauncher.launch(Intent.createChooser(intent, "Select Picture"));
     }
 
+    final private ActivityResultLauncher<Intent> mActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == RESULT_OK) {
+                        Intent data = result.getData();
+                        assert data != null;
+                        uri = data.getData();
+                        try {
+                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                            imageView.setImageBitmap(bitmap);
+                            MainActivity.imgAvatar.setImageBitmap(bitmap);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            });
     private void init() {
         toolbar = findViewById(R.id.toolBar);
         setSupportActionBar(toolbar);

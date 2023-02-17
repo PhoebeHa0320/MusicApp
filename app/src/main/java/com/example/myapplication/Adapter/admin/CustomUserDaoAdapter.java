@@ -90,13 +90,13 @@ public class CustomUserDaoAdapter extends ArrayAdapter<User> {
             Handler handler = new Handler();
             handler.postDelayed(() -> {
                 control = "repair";
-                Intent intent = new Intent(getContext(), CRUDDaoActivity.class);
+                Intent intent = new Intent(this.getContext(), CRUDDaoActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("control", control);
                 bundle.putString("key", user.key);
                 bundle.putString("module", getCheck());
                 intent.putExtra("bundle", bundle);
-                getContext().startActivity(intent);
+                this.getContext().startActivity(intent);
             }, 500);
         });
         viewHolder.imgBtnDelete.setOnClickListener(view -> {

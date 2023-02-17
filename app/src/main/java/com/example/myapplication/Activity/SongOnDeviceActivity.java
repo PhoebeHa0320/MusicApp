@@ -4,6 +4,7 @@ import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 
 import android.app.AlertDialog;
 import android.content.ContentResolver;
+import android.content.ContentUris;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -97,15 +98,18 @@ public class SongOnDeviceActivity extends AppCompatActivity {
             int mTitle = cursor.getColumnIndex(MediaStore.Audio.Media.TITLE);
             int mData = cursor.getColumnIndex(MediaStore.Audio.Media.DATA);
             int mKey = cursor.getColumnIndex(MediaStore.Audio.Media._ID);
+            Uri imageSong = ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, mKey);
             int id = 1;
             do {
                 Song song = new Song();
                 String name = cursor.getString(mTitle);
                 String linkSong = cursor.getString(mData);
+                String linkImg = String.valueOf(imageSong);
                 song.key = cursor.getString(mKey);
                 song.setId(id + "");
                 song.setName(name);
                 song.setLinkSong(linkSong);
+                song.setImage(linkImg);
                 songs.add(song);
                 id++;
             } while (cursor.moveToNext());

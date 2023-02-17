@@ -119,7 +119,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
     private static final int MODULE_ALBUM = 5;
     private static final int MODULE_PLAYLIST = 6;
 
-    private int mCurrentModule = MODULE_SONG;
+    private int mCurrentModule;
 
     Activity activity;
 
@@ -195,7 +195,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
                 textUser.add(getString(R.string.strHeaderUsername));
                 textUser.add(getString(R.string.strHeaderPassword));
                 textUser.add(getString(R.string.strHeaderEmail));
-                textUser.add(getString(R.string.strHeaderPhone));
+                //textUser.add(getString(R.string.strHeaderPhone));
                 textUser.add(getString(R.string.strHeaderAvatar));
                 textUser.add(getString(R.string.strHeaderPermission));
 

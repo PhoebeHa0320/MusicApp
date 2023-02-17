@@ -20,7 +20,7 @@ android {
 
     signingConfigs {
             myconfig {
-                storeFile file(var)
+                storeFile file('Music_keystore.jks')
                 storePassword '123456'
                 keyAlias 'hoangha0320'
                 keyPassword '123456'

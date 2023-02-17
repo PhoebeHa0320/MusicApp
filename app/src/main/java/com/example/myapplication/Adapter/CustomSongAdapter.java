@@ -3,6 +3,7 @@ package com.example.myapplication.Adapter;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
@@ -107,7 +108,9 @@ public class CustomSongAdapter extends ArrayAdapter<Song> implements Filterable 
             PopupMenu popup = new PopupMenu(view.getContext(), view);
             //inflating menu from xml resource
             popup.inflate(R.menu.song_menu);
-            popup.setGravity(Gravity.NO_GRAVITY);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                popup.setGravity(Gravity.NO_GRAVITY);
+            }
 
             MenuItem menuAddFavorites = popup.getMenu().findItem(R.id.item_add_to_favorites);
             MenuItem menuAddPlaylist = popup.getMenu().findItem(R.id.item_add_to_playlist);
