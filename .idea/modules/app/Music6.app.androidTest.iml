@@ -28,6 +28,7 @@
           <option name="noStdlib" value="true" />
           <option name="noReflect" value="true" />
           <option name="moduleName" value="app_debug" />
+          <option name="jvmTarget" value="1.8" />
           <option name="friendPaths">
             <array>
               <option value="$MODULE_DIR$/../../../app/build/tmp/kotlin-classes/debug" />
@@ -35,8 +36,8 @@
               <option value="$MODULE_DIR$/../../../app/build/intermediates/app_classes/debug/classes.jar" />
             </array>
           </option>
-          <option name="languageVersion" value="1.6" />
-          <option name="apiVersion" value="1.6" />
+          <option name="languageVersion" value="1.8" />
+          <option name="apiVersion" value="1.8" />
           <option name="pluginOptions">
             <array />
           </option>

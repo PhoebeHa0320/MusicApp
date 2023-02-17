@@ -17,13 +17,14 @@ plugins {
 
 
 android {
+
     signingConfigs {
-        myconfig {
-            storeFile file('C:\\Users\\PC\\Desktop\\Music_keystore.jks')
-            storePassword '123456'
-            keyAlias 'hoangha0320'
-            keyPassword '123456'
-        }
+            myconfig {
+                storeFile file('C:\\Users\\PC\\Desktop\\Music_keystore.jks')
+                storePassword '123456'
+                keyAlias 'hoangha0320'
+                keyPassword '123456'
+            }
     }
     compileSdkVersion 33
     buildToolsVersion "32.0.0"
