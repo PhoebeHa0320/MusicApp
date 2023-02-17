@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
         });
         edtPassword.setOnFocusChangeListener((view, b) -> {
             // your code here
-            if (edtPassword.getText().toString().trim().length() < 6) {
+            if (edtPassword.getText().toString().trim().length() <   9) {
                 edtPassword.setError(getString(R.string.strRequiredPassword));
             } else {
                 // your code here

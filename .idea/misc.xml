@@ -93,9 +93,11 @@
         <entry key="..\:/Git/Music/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.245" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/activity_crud_dao.xml" value="0.3619791666666667" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/activity_introductory.xml" value="0.3619791666666667" />
+        <entry key="..\:/T3H/Music/app/src/main/res/layout/activity_list_music.xml" value="0.36666666666666664" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/activity_login.xml" value="0.3619791666666667" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/activity_main.xml" value="0.3619791666666667" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/activity_playlist.xml" value="0.3619791666666667" />
+        <entry key="..\:/T3H/Music/app/src/main/res/layout/activity_playmucsic.xml" value="0.36666666666666664" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/activity_profile.xml" value="0.33" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/activity_song_on_device.xml" value="0.25" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/circle_avt_toolbar.xml" value="0.33" />
@@ -103,6 +105,7 @@
         <entry key="..\:/T3H/Music/app/src/main/res/layout/dialog_changepassword.xml" value="0.3619791666666667" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/dialog_input.xml" value="0.33" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/dialog_login.xml" value="0.3619791666666667" />
+        <entry key="..\:/T3H/Music/app/src/main/res/layout/fame_theme_type_album_playlist.xml" value="0.36666666666666664" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/fragment_banner.xml" value="0.3619791666666667" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/fragment_dia_nhac.xml" value="0.3619791666666667" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/fragment_explore.xml" value="0.3619791666666667" />
@@ -116,9 +119,17 @@
         <entry key="..\:/T3H/Music/app/src/main/res/layout/item_account_type.xml" value="0.3619791666666667" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/item_add_playlist.xml" value="0.3619791666666667" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/item_banner.xml" value="0.15462962962962962" />
+        <entry key="..\:/T3H/Music/app/src/main/res/layout/item_controlmucsic.xml" value="0.36666666666666664" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/item_dao.xml" value="0.36666666666666664" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/item_libary.xml" value="0.36666666666666664" />
+        <entry key="..\:/T3H/Music/app/src/main/res/layout/item_loading.xml" value="0.36666666666666664" />
+        <entry key="..\:/T3H/Music/app/src/main/res/layout/item_login_dialog.xml" value="0.36666666666666664" />
+        <entry key="..\:/T3H/Music/app/src/main/res/layout/item_music_disc.xml" value="0.36666666666666664" />
+        <entry key="..\:/T3H/Music/app/src/main/res/layout/item_play_music_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/T3H/Music/app/src/main/res/layout/item_playlist.xml" value="0.36666666666666664" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/item_song.xml" value="0.36666666666666664" />
+        <entry key="..\:/T3H/Music/app/src/main/res/layout/item_songthems.xml" value="0.36666666666666664" />
+        <entry key="..\:/T3H/Music/app/src/main/res/layout/item_theme_type_album_playlist.xml" value="0.36666666666666664" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/layout_download.xml" value="0.3619791666666667" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/layout_download_expand.xml" value="0.3619791666666667" />
         <entry key="..\:/T3H/Music/app/src/main/res/layout/layout_header_nav.xml" value="0.3619791666666667" />
@@ -128,6 +139,7 @@
         <entry key="..\:/T3H/Music/app/src/main/res/menu/main_menu.xml" value="0.18489583333333334" />
         <entry key="..\:/T3H/Music/app/src/main/res/menu/nav_menu.xml" value="0.18489583333333334" />
         <entry key="..\:/T3H/Music/app/src/main/res/menu/playlist_menu.xml" value="0.25" />
+        <entry key="..\:/T3H/Music/app/src/main/res/menu/song_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

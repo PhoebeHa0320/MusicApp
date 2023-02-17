@@ -51,7 +51,7 @@
     <string name="strUpdatePlaylist">Cập nhật danh sách phát</string>
     <string name="strPlaylistName">Tên danh sách phát</string>
     <string name="strHintPlaylistName">Nhập tên của danh sách phát</string>
-    <string name="strRequiredPassword">Sử dụng 6 ký tự trở lên cho mật khẩu của bạn</string>
+    <string name="strRequiredPassword">Sử dụng 9 ký tự trở lên cho mật khẩu của bạn</string>
     <string name="strRequiredEmail">Địa chỉ email không hợp lệ</string>
     <string name="noValue">Chưa có giá trị ban đầu</string>
     <string name="strHeaderId">Id</string>
