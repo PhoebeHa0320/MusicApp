@@ -119,7 +119,10 @@ public class SongOnDeviceActivity extends AppCompatActivity {
                     AlertDialog.Builder alert = new AlertDialog.Builder(SongOnDeviceActivity.this);
                     alert.setTitle("Warning");
                     alert.setMessage("Cho phép quyền truy cập");
-                    alert.setPositiveButton("ok", (dialogInterface, i) -> ActivityCompat.requestPermissions(SongOnDeviceActivity.this, new String[]{READ_EXTERNAL_STORAGE}, 30));
+                    alert.setPositiveButton("ok", (dialogInterface, i) -> {
+                        ActivityCompat.requestPermissions(SongOnDeviceActivity.this, new String[]{READ_EXTERNAL_STORAGE}, 30);
+                        getMp3();
+                    });
                     alert.setNegativeButton("cancel", null);
                     AlertDialog alertDialog = alert.create();
                     alertDialog.show();

@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,8 +22,6 @@ import com.klinker.android.link_builder.Link;
 import com.klinker.android.link_builder.LinkBuilder;
 
 import java.util.Objects;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -33,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView txtTitleLogin, txtLogNotify;
     EditText edtUsername, edtEmail, edtPassword;
     Button btnLogin, btnCancel;
-
+    Intent intent;
     boolean login;
     private FirebaseAuth mAuth;
 
@@ -97,6 +94,10 @@ public class LoginActivity extends AppCompatActivity {
                         .addOnSuccessListener(authResult -> {
                             // Sign in success, update UI with the signed-in user's information
                             finish();
+                            //Restart application
+                            intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName());
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
                         })
                         .addOnFailureListener(e -> {
                             // If sign in fails, display a message to the user.
@@ -152,6 +153,9 @@ public class LoginActivity extends AppCompatActivity {
                                         });
                                 txtLogNotify.setText(getString(R.string.strSignUpFailed) + " " + getString(R.string.strHeaderSignIn));
                                 LinkBuilder.on(txtLogNotify).addLink(log_Link).build();
+                                intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName());
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
                             }
                         })
                         .addOnSuccessListener(authResult -> {

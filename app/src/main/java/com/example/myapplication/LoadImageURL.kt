@@ -16,11 +16,8 @@
 
 package com.example.myapplication
 
-import android.graphics.drawable.Drawable
 import android.widget.ImageView
-import coil.imageLoader
 import coil.load
-import com.example.myapplication.Adapter.AlbumItemAdapter
 
 class LoadImageURL( private var url: String?,
 
