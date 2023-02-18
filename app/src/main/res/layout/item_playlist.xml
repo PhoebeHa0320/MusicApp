@@ -57,7 +57,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginRight="12dp"
-            android:background="@drawable/ic_rename"
+            android:background="@drawable/ic_baseline_edit_24"
             android:text="Button" />
 
         <ImageButton
@@ -65,7 +65,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginLeft="12dp"
-            android:background="@drawable/ic_delete"
+            android:background="@drawable/ic_baseline_delete_24"
             android:text="Button" />
     </LinearLayout>
 

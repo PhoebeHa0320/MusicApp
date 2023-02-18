@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Music Enthusiasts</string>
+    <string name="app_name">Shuvi Music</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="navigation_drawer_open">Mở navigation drawer</string>
@@ -43,7 +43,7 @@
     <string name="strHeaderSignout">Đăng xuất</string>
 
     <string name="strHeaderLibrary">Thư viện</string>
-    <string name="strHeaderSong">Bài hát</string>
+    <string name="strHeaderSong">Video</string>
     <string name="strHeaderOnDevice">Trên thiết bị</string>
     <string name="strHeaderPlaylist">Danh sách nhạc</string>
     <string name="strHeaderHistory">Bài hát gần đây</string>

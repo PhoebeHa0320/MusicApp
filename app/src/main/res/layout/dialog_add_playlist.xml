@@ -6,7 +6,7 @@
     android:maxHeight="300dp"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/radius_blue">
+    >
 
     <TextView
         android:id="@+id/txtTitle"

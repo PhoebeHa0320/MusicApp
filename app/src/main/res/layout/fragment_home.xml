@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fragment_trang_chu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/custom_background_banner"
+    android:background="@drawable/gradien_home"
     android:fillViewport="true"
     android:scrollbars="none">
 
@@ -15,13 +16,15 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
-            android:layout_height="200dp">
-
-            <ImageView
+            android:layout_height="220dp">
+            <com.denzcoskun.imageslider.ImageSlider
+                android:id="@+id/image_slider"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/top_music"
-                android:scaleType="fitXY" />
+                android:layout_height="220dp"
+                android:layout_marginBottom="20dp"
+                app:iss_auto_cycle="true"
+                app:iss_delay="0"
+                app:iss_period="1000" />
         </androidx.cardview.widget.CardView>
 
         <FrameLayout

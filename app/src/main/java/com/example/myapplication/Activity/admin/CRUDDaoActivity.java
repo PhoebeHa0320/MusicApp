@@ -1248,8 +1248,8 @@ public class CRUDDaoActivity extends AppCompatActivity {
     }
 
     public int getCurentModule(String module) {
-        if (module.equals(User.class.getName()))
-            return MODULE_USER;
+//        if (module.equals(User.class.getName()))
+//            return MODULE_USER;
         if (module.equals(Song.class.getName()))
             return MODULE_SONG;
         if (module.equals(Banner.class.getName()))

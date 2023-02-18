@@ -66,7 +66,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:text="Ca sĩ"
-            android:textColor="#979797"
+            android:textColor="#1C1B1B"
             android:textSize="18sp" />
 
         <ImageButton
@@ -76,7 +76,7 @@
             android:layout_marginLeft="270dp"
             android:layout_marginTop="20dp"
             android:scaleType="fitXY"
-            android:src="@drawable/pen"
+            android:src="@drawable/ic_baseline_edit_24"
             android:text="S" />
 
         <ImageButton
@@ -86,7 +86,7 @@
             android:layout_marginLeft="320dp"
             android:layout_marginTop="20dp"
             android:scaleType="fitXY"
-            android:src="@drawable/remove"
+            android:src="@drawable/ic_baseline_delete_24"
             android:text="X" />
 
 

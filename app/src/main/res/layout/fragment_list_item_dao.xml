@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:scaleType="centerInside"
-                android:src="@drawable/image_admin" />
+                android:src="@drawable/img" />
 
             <TextView
                 android:id="@+id/tvTitlePlayListBaihatDao"

@@ -20,7 +20,7 @@ android {
 
     signingConfigs {
             myconfig {
-                storeFile file('Music_keystore.jks')
+                storeFile file('E:\\T3H\\Music\\Music_keystore.jks')
                 storePassword '123456'
                 keyAlias 'hoangha0320'
                 keyPassword '123456'
@@ -93,4 +93,6 @@ dependencies {
     //Coil
     implementation("io.coil-kt:coil:2.2.2")
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //Slide
+    implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
 }

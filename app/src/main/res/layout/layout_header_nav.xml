@@ -27,7 +27,7 @@
         android:id="@+id/txtAccountName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="UserName"
         android:textColor="@color/white"
         android:textSize="16dp" />
 
@@ -35,7 +35,7 @@
         android:id="@+id/txtAccountEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Email"
         android:textColor="@color/white"
         android:textSize="14sp" />
     <LinearLayout
