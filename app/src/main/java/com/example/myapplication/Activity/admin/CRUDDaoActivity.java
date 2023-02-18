@@ -188,56 +188,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
         int sizePixel = (int) (sizeSp * densitySp);
 
         switch (mCurrentModule) {
-            case MODULE_USER:
-                actionBar.setTitle(R.string.strHeaderUser);
 
-                textUser.add(getString(R.string.strHeaderId));
-                textUser.add(getString(R.string.strHeaderUsername));
-                textUser.add(getString(R.string.strHeaderPassword));
-                textUser.add(getString(R.string.strHeaderEmail));
-                //textUser.add(getString(R.string.strHeaderPhone));
-                textUser.add(getString(R.string.strHeaderAvatar));
-                textUser.add(getString(R.string.strHeaderPermission));
-
-                hintUser.add(getString(R.string.strHintId));
-                hintUser.add(getString(R.string.strHintUsername));
-                hintUser.add(getString(R.string.strHintPassword));
-                hintUser.add(getString(R.string.strHintEmail));
-                hintUser.add(getString(R.string.strHintPhone));
-                hintUser.add(getString(R.string.strHintAvatar));
-                for (int i = 0; i < 7; i++) {
-                    TableRow tableRow = new TableRow(this);
-                    tableRow.setPadding(0, paddingDp, 0, paddingDp);
-
-                    TextView textView = new TextView(this);
-                    textView.setText(textUser.get(i) + ":");
-                    textView.setTextColor(Color.WHITE);
-                    textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, sizePixel);
-
-                    tableRow.addView(textView, 0, paramElements);
-                    textViews.add(textView);
-
-                    if (i != 6) {
-                        EditText editText = new EditText(this);
-                        editText.setHint(hintUser.get(i));
-                        editText.setEms(10);
-                        setUiView(editText);
-
-                        tableRow.addView(editText, 1, paramElements);
-                        editTexts.add(editText);
-                    } else {
-                        Spinner spinner = new Spinner(this);
-                        spinner.setPadding(0, paddingPixel, 0, paddingPixel);
-                        setUiView(spinner);
-
-                        tableRow.addView(spinner, 1, paramElements);
-                        spinners.add(spinner);
-                        tableRow.setPadding(0, paddingPixel, 0, paddingPixel);
-                    }
-                    tableLayout.addView(tableRow, i, paramContainer);
-                }
-
-                break;
             case MODULE_SONG:
                 actionBar.setTitle(R.string.strHeaderSong);
 
