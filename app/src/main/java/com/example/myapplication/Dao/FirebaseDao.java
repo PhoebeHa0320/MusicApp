@@ -85,18 +85,8 @@ public abstract class FirebaseDao<T> implements GenericDao<T> {
 
     public void save(T t, String key, final TaskListener taskListener) {
         Task<Void> task = dbReference.child(tableName).child(key).setValue(t);
-        task.addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                taskListener.OnSuccess();
-            }
-        });
-        task.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                taskListener.OnFail();
-            }
-        });
+        task.addOnCompleteListener(task1 -> taskListener.OnSuccess());
+        task.addOnFailureListener(e -> taskListener.OnFail());
     }
 
     public void delete(String key, TaskListener taskListener) {

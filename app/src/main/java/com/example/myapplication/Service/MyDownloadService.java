@@ -116,7 +116,7 @@ public class MyDownloadService extends Service {
 
     public void initNotification(NotifyObject notifyObject) {
         Intent intent = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
         // Get the layouts to use in the custom notification
         notificationLayout = new RemoteViews(getPackageName(), R.layout.layout_download);
         notificationLayoutExpanded = new RemoteViews(getPackageName(), R.layout.layout_download_expand);

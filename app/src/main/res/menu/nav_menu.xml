@@ -33,9 +33,6 @@
         android:title="@string/strHeaderAdmin">
         <menu>
             <item
-                android:id="@+id/nav_user_manager"
-                android:title="@string/strHeaderUserManager" />
-            <item
                 android:id="@+id/nav_song_manager"
                 android:title="@string/strHeaderSongManager" />
             <item

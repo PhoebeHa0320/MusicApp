@@ -1,5 +1,7 @@
 package com.example.myapplication.Dao;
 
+import android.annotation.SuppressLint;
+
 import com.example.myapplication.Dao.Listeners.RetrieValEventListener;
 import com.example.myapplication.Model.Playlist_Song;
 import com.example.myapplication.Model.Song;
@@ -112,14 +114,16 @@ public class SongDao extends FirebaseDao<Song> {
 
     public void getSongByListTypes(ArrayList<Types> typess, RetrieValEventListener<List<Song>> retrieValEventListener) {
         this.getAll(new RetrieValEventListener<List<Song>>() {
+            @SuppressLint("SuspiciousIndentation")
             @Override
             public void OnDataRetrieved(List<Song> songs) {
                 ArrayList<Song> songByListTypes = new ArrayList<>();
                 for (Song song : songs) {
-                    for (Types types : typess)
-                    if (song.getIdTypes().equals(types.getId())) {
-                        songByListTypes.add((song));
-                        break;
+                    for (Types types : typess) {
+                        if (song.getIdTypes().equals(types.getId())) {
+                            songByListTypes.add((song));
+                            break;
+                        }
                     }
                 }
                 retrieValEventListener.OnDataRetrieved(songByListTypes);

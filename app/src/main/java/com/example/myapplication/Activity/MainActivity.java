@@ -240,10 +240,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 return true;
-            case R.id.nav_user_manager:
-                intent = new Intent(getApplication(), UserDaoActivity.class);
-                startActivity(intent);
-                return true;
             case R.id.nav_song_manager:
                 intent = new Intent(this, SongDaoActivity.class);
                 startActivity(intent);
