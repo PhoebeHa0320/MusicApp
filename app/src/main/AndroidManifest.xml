@@ -30,7 +30,6 @@
         <activity android:name=".Activity.SongOnDeviceActivity"/>
         <activity android:name=".Activity.admin.UserDaoActivity" />
         <activity android:name=".Activity.admin.SongDaoActivity" />
-        <activity android:name=".Activity.admin.BannerDaoActivity" />
         <activity android:name=".Activity.admin.AlbumDaoActivity" />
         <activity android:name=".Activity.admin.PlaylistDaoActivity" />
         <activity android:name=".Activity.admin.TypesDaoActivity" />

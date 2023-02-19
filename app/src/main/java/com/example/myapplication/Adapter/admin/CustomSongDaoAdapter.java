@@ -18,10 +18,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 
-import com.bumptech.glide.Glide;
 import com.example.myapplication.Activity.admin.CRUDDaoActivity;
 import com.example.myapplication.Activity.admin.SongDaoActivity;
-import com.example.myapplication.Dao.BannerDao;
 import com.example.myapplication.Dao.Listeners.RetrieValEventListener;
 import com.example.myapplication.Dao.Listeners.TaskListener;
 import com.example.myapplication.Dao.SongDao;
@@ -129,31 +127,31 @@ public class CustomSongDaoAdapter extends ArrayAdapter<Song> {
     }
 
     private void handle() {
-        BannerDao bannerDao = new BannerDao();
-        bannerDao.getAll(new RetrieValEventListener<List<Banner>>() {
-            @Override
-            public void OnDataRetrieved(List<Banner> Banners) {
-                banners = new ArrayList<>();
-                banners = (ArrayList<Banner>) Banners;
-                int size = banners.size();
-                for (int i = 0; i < size; i++) {
-                    if (banners.get(i).getId().equals(baihatId)) {
-                        Log.d("TTT", banners.get(i).key);
-                        BannerDao bannerDao = new BannerDao();
-                        bannerDao.delete(banners.get(i).key, new TaskListener() {
-                            @Override
-                            public void OnSuccess() {
-
-                            }
-
-                            @Override
-                            public void OnFail() {
-
-                            }
-                        });
-                    }
-                }
-            }
-        });
+//        BannerDao bannerDao = new BannerDao();
+//        bannerDao.getAll(new RetrieValEventListener<List<Banner>>() {
+//            @Override
+//            public void OnDataRetrieved(List<Banner> Banners) {
+//                banners = new ArrayList<>();
+//                banners = (ArrayList<Banner>) Banners;
+//                int size = banners.size();
+//                for (int i = 0; i < size; i++) {
+//                    if (banners.get(i).getId().equals(baihatId)) {
+//                        Log.d("TTT", banners.get(i).key);
+//                        BannerDao bannerDao = new BannerDao();
+//                        bannerDao.delete(banners.get(i).key, new TaskListener() {
+//                            @Override
+//                            public void OnSuccess() {
+//
+//                            }
+//
+//                            @Override
+//                            public void OnFail() {
+//
+//                            }
+//                        });
+//                    }
+//                }
+//            }
+//        });
     }
 }

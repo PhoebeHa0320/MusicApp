@@ -24,12 +24,10 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.bumptech.glide.Glide;
 import com.example.myapplication.Activity.admin.AlbumDaoActivity;
-import com.example.myapplication.Activity.admin.BannerDaoActivity;
 import com.example.myapplication.Activity.admin.PlaylistDaoActivity;
 import com.example.myapplication.Activity.admin.SongDaoActivity;
 import com.example.myapplication.Activity.admin.ThemeDaoActivity;
 import com.example.myapplication.Activity.admin.TypesDaoActivity;
-import com.example.myapplication.Activity.admin.UserDaoActivity;
 import com.example.myapplication.Adapter.MainViewPagerAdapter;
 import com.example.myapplication.Dao.Listeners.RetrieValEventListener;
 import com.example.myapplication.Dao.UserDao;
@@ -244,10 +242,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent = new Intent(this, SongDaoActivity.class);
                 startActivity(intent);
                 return true;
-            case R.id.nav_banner_manager:
-                intent = new Intent(this, BannerDaoActivity.class);
-                startActivity(intent);
-                return true;
             case R.id.nav_album_manager:
                 intent = new Intent(this, AlbumDaoActivity.class);
                 startActivity(intent);
@@ -258,10 +252,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             case R.id.nav_types_manager:
                 intent = new Intent(this, TypesDaoActivity.class);
-                startActivity(intent);
-                return true;
-            case R.id.nav_playlist_manager:
-                intent = new Intent(this, PlaylistDaoActivity.class);
                 startActivity(intent);
                 return true;
         }

@@ -36,9 +36,6 @@
                 android:id="@+id/nav_song_manager"
                 android:title="@string/strHeaderSongManager" />
             <item
-                android:id="@+id/nav_banner_manager"
-                android:title="@string/strHeaderBannerManager" />
-            <item
                 android:id="@+id/nav_album_manager"
                 android:title="@string/strHeaderAlbumManager" />
             <item
@@ -47,9 +44,7 @@
             <item
                 android:id="@+id/nav_types_manager"
                 android:title="@string/strHeaderTypesManager" />
-            <item
-                android:id="@+id/nav_playlist_manager"
-                android:title="@string/strHeaderPlaylistManager" />
+
         </menu>
     </item>
 </menu>

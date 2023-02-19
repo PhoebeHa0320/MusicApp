@@ -30,7 +30,6 @@ import com.example.myapplication.Adapter.admin.CustomSongByPlaylistAdapter;
 import com.example.myapplication.Adapter.admin.SpinnerDaoAdapter;
 import com.example.myapplication.Dao.AlbumDao;
 import com.example.myapplication.Dao.SongDao;
-import com.example.myapplication.Dao.BannerDao;
 import com.example.myapplication.Dao.ThemeDao;
 import com.example.myapplication.Dao.Listeners.RetrieValEventListener;
 import com.example.myapplication.Dao.Listeners.TaskListener;
@@ -66,10 +65,6 @@ public class CRUDDaoActivity extends AppCompatActivity {
     ArrayList<String> textSong = new ArrayList<>();
     ArrayList<String> hintSong = new ArrayList<>();
 
-    Banner banner;
-    ArrayList<Banner> banners;
-    ArrayList<String> textBanner = new ArrayList<>();
-    ArrayList<String> hintBanner = new ArrayList<>();
 
     Album album;
     ArrayList<Album> albums;
@@ -113,11 +108,10 @@ public class CRUDDaoActivity extends AppCompatActivity {
 
     private static final int MODULE_USER = 0;
     private static final int MODULE_SONG = 1;
-    private static final int MODULE_BANNER = 2;
-    private static final int MODULE_THEME = 3;
-    private static final int MODULE_TYPES = 4;
-    private static final int MODULE_ALBUM = 5;
-    private static final int MODULE_PLAYLIST = 6;
+    private static final int MODULE_THEME = 2;
+    private static final int MODULE_TYPES = 3;
+    private static final int MODULE_ALBUM = 4;
+    private static final int MODULE_PLAYLIST = 5;
 
     private int mCurrentModule;
 
@@ -238,50 +232,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
                     tableLayout.addView(tableRow, i, paramContainer);
                 }
                 break;
-            case MODULE_BANNER:
-                actionBar.setTitle(R.string.strHeaderBanner);
 
-                textBanner.add(getString(R.string.strHeaderId));
-                textBanner.add(getString(R.string.strHeaderName));
-                textBanner.add(getString(R.string.strHeaderImage));
-                textBanner.add(getString(R.string.strHeaderSong));
-
-                hintBanner.add(getString(R.string.strHintId));
-                hintBanner.add(getString(R.string.strHintName));
-                hintBanner.add(getString(R.string.strHintImage));
-                for (int i = 0; i < 4; i++) {
-                    TableRow tableRow = new TableRow(this);
-                    tableRow.setPadding(0, paddingDp, 0, paddingDp);
-
-                    TextView textView = new TextView(this);
-                    textView.setText(textBanner.get(i) + ":");
-                    textView.setTextColor(Color.WHITE);
-                    textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, sizePixel);
-
-                    tableRow.addView(textView, 0, paramElements);
-                    textViews.add(textView);
-
-                    if (i == 3) {
-                        Spinner spinner = new Spinner(this);
-                        spinner.setPadding(0, paddingPixel, 0, paddingPixel);
-                        setUiView(spinner);
-
-                        tableRow.addView(spinner, 1, paramElements);
-                        spinners.add(spinner);
-                        tableRow.setPadding(0, paddingPixel, 0, paddingPixel);
-                    } else {
-                        EditText editText = new EditText(this);
-                        editText.setHint(hintBanner.get(i));
-                        editText.setEms(10);
-                        setUiView(editText);
-
-                        tableRow.addView(editText, 1, paramElements);
-                        editTexts.add(editText);
-                    }
-
-                    tableLayout.addView(tableRow, i, paramContainer);
-                }
-                break;
             case MODULE_ALBUM:
                 actionBar.setTitle(R.string.strHeaderAlbum);
 
@@ -546,43 +497,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
                     }
                 });
                 break;
-            case MODULE_BANNER:
-                SongDao songDao = new SongDao();
-                songDao.getAll(new RetrieValEventListener<List<Song>>() {
-                    @Override
-                    public void OnDataRetrieved(List<Song> mSongs) {
-                        songs = new ArrayList<>();
-                        songs = (ArrayList<Song>) mSongs;
-                        int position = 0;
-                        for (int i = 0; i < songs.size(); i++) {
-                            String id = songs.get(i).getId();
-                            String name = songs.get(i).getName();
-                            if (!isAdd && id.equals(banner.getIdSong())) {
-                                position = i;
-                            }
-                            item = new Item(id, name);
-                            items.add(item);
-                        }
-                        spinnerDaoAdapter = new SpinnerDaoAdapter(CRUDDaoActivity.this, android.R.layout.simple_spinner_item, items);
-                        spinnerDaoAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                        spinners.get(0).setAdapter(spinnerDaoAdapter);
-                        spinners.get(0).setSelection(position);
-                        spinners.get(0).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                            @SuppressLint("ResourceAsColor")
-                            @Override
-                            public void onItemSelected(AdapterView<?> arg0, View view, int arg2, long arg3) {
-                                spinnerDaoAdapter.setSelectedItem(arg2);
-                            }
 
-                            @Override
-                            public void onNothingSelected(AdapterView<?> arg0) {
-                                // TODO Auto-generated method stub
-                                spinnerDaoAdapter.setSelectedItem(-1);
-                            }
-                        });
-                    }
-                });
-                break;
             case MODULE_PLAYLIST:
                 items.remove(0);
                 items.add(new Item("0", getString(R.string.strHeaderAdmin)));
@@ -701,21 +616,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
                         Toast.makeText(CRUDDaoActivity.this, getString(R.string.strNotifyFail), Toast.LENGTH_SHORT).show();
                     }
                 });
-                break;
-            case MODULE_BANNER:
-                BannerDao bannerDao = new BannerDao();
-                bannerDao.save(banner, key, new TaskListener() {
-                    @Override
-                    public void OnSuccess() {
-                        Toast.makeText(CRUDDaoActivity.this, getString(R.string.strNotifySuccess), Toast.LENGTH_SHORT).show();
-                    }
 
-                    @Override
-                    public void OnFail() {
-                        Toast.makeText(CRUDDaoActivity.this, getString(R.string.strNotifyFail), Toast.LENGTH_SHORT).show();
-                    }
-                });
-                break;
             case MODULE_ALBUM:
                 AlbumDao albumDao = new AlbumDao();
                 albumDao.save(album, key, new TaskListener() {
@@ -779,20 +680,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
                     }
                 });
                 break;
-            case MODULE_BANNER:
-                BannerDao bannerDao = new BannerDao();
-                bannerDao.save(banner, bannerDao.getNewKey(), new TaskListener() {
-                    @Override
-                    public void OnSuccess() {
-                        Toast.makeText(CRUDDaoActivity.this, getString(R.string.strNotifySuccess), Toast.LENGTH_SHORT).show();
-                    }
 
-                    @Override
-                    public void OnFail() {
-                        Toast.makeText(CRUDDaoActivity.this, getString(R.string.strNotifyFail), Toast.LENGTH_SHORT).show();
-                    }
-                });
-                break;
             case MODULE_ALBUM:
                 AlbumDao albumDao = new AlbumDao();
                 albumDao.save(album, albumDao.getNewKey(), new TaskListener() {
@@ -888,23 +776,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
                     finish();
                 });
                 break;
-            case MODULE_BANNER:
-                BannerDao bannerDao = new BannerDao();
-                editTexts.get(0).setText(bannerDao.getNewKey());
-                btnUpdate.setOnClickListener(view -> {
-                    String id = editTexts.get(0).getText().toString();
-                    String name = editTexts.get(1).getText().toString();
-                    String image = editTexts.get(2).getText().toString();
-                    item = (Item) spinners.get(0).getSelectedItem();
-                    String idBaihat = item.getId();
-                    banner = new Banner(id, name, image, idBaihat);
 
-                    postDao();
-                    Intent intent1 = new Intent(activity, BannerDaoActivity.class);
-                    startActivity(intent1);
-                    finish();
-                });
-                break;
             case MODULE_ALBUM:
                 AlbumDao albumDao = new AlbumDao();
                 editTexts.get(0).setText(albumDao.getNewKey());
@@ -1046,33 +918,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
                     finish();
                 });
                 break;
-            case MODULE_BANNER:
-                BannerDao bannerDao = new BannerDao();
-                bannerDao.get(key, new RetrieValEventListener<Banner>() {
-                    @Override
-                    public void OnDataRetrieved(Banner mBanner) {
-                        banner = new Banner();
-                        banner = mBanner;
 
-                        editTexts.get(0).setText(banner.getId());
-                        editTexts.get(1).setText(banner.getName());
-                        editTexts.get(2).setText(banner.getImage());
-                        spinners.get(0).setAdapter(spinnerDaoAdapter);
-
-                        initData();
-                    }
-                });
-                btnUpdate.setOnClickListener(view -> {
-                    String name = editTexts.get(1).getText().toString();
-                    String image = editTexts.get(2).getText().toString();
-                    item = (Item) spinners.get(0).getSelectedItem();
-                    String idBaihat = item.getId();
-                    banner.update(name, image, idBaihat);
-
-                    repairDao();
-                    finish();
-                });
-                break;
             case MODULE_ALBUM:
                 AlbumDao albumDao = new AlbumDao();
                 albumDao.get(key, new RetrieValEventListener<Album>() {
@@ -1203,8 +1049,6 @@ public class CRUDDaoActivity extends AppCompatActivity {
 //            return MODULE_USER;
         if (module.equals(Song.class.getName()))
             return MODULE_SONG;
-        if (module.equals(Banner.class.getName()))
-            return MODULE_BANNER;
         if (module.equals(Album.class.getName()))
             return MODULE_ALBUM;
         if (module.equals(Theme.class.getName()))
