@@ -77,7 +77,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
     ArrayList<String> hintTheme = new ArrayList<>();
 
     Types types;
-    ArrayList<Types> typess;
+    ArrayList<Types> types1;
     ArrayList<String> textTypes = new ArrayList<>();
     ArrayList<String> hintTypes = new ArrayList<>();
 
@@ -98,10 +98,10 @@ public class CRUDDaoActivity extends AppCompatActivity {
 
 
     String key;
-    SpinnerDaoAdapter spinnerDaoAdapter, spinnerDaoAdapter1;
-    ArrayList<Item> items, items1;
+    SpinnerDaoAdapter spinnerDaoAdapter, spinnerDaoAdapter1, spinnerDaoAdapter2;
+    ArrayList<Item> items, items1, items2;
 
-    Item item, item1;
+    Item item, item1, item2;
     Boolean isAdd = true;
 
     FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -190,7 +190,8 @@ public class CRUDDaoActivity extends AppCompatActivity {
                 textSong.add(getString(R.string.strHeaderName));
                 textSong.add(getString(R.string.strHeaderImage));
                 textSong.add(getString(R.string.strHeaderAlbum));
-                textSong.add(getString(R.string.strHeaderPlaylist));
+                textSong.add(getString(R.string.strHeaderTypes));
+                textSong.add(getString(R.string.strHeaderTheme));
                 textSong.add(getString(R.string.strHeaderSinger));
                 textSong.add(getString(R.string.strHeaderLinkSong));
 
@@ -199,7 +200,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
                 hintSong.add(getString(R.string.strHintImage));
                 hintSong.add(getString(R.string.strHintSinger));
                 hintSong.add(getString(R.string.strHintLinkSong));
-                for (int i = 0; i < 7; i++) {
+                for (int i = 0; i < 8; i++) {
                     TableRow tableRow = new TableRow(this);
                     tableRow.setPadding(0, paddingDp, 0, paddingDp);
 
@@ -211,7 +212,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
                     tableRow.addView(textView, 0, paramElements);
                     textViews.add(textView);
 
-                    if (i == 3 || i == 4) {
+                    if (i == 3 || i == 4 || i == 5) {
                         Spinner spinner = new Spinner(this);
                         spinner.setPadding(0, paddingPixel, 0, paddingPixel);
                         setUiView(spinner);
@@ -221,7 +222,7 @@ public class CRUDDaoActivity extends AppCompatActivity {
                         tableRow.setPadding(0, paddingPixel, 0, paddingPixel);
                     } else {
                         EditText editText = new EditText(this);
-                        editText.setHint(hintSong.get(i < 3 ? i : i - 2));
+                        editText.setHint(hintSong.get(i < 3 ? i : i - 3));
                         editText.setEms(10);
                         setUiView(editText);
 
@@ -396,6 +397,12 @@ public class CRUDDaoActivity extends AppCompatActivity {
         items1 = new ArrayList<>();
         items1.add(new Item("", getString(R.string.noValue)));
 
+        items2 = new ArrayList<>();
+        items2.add(new Item("", getString(R.string.noValue)));
+
+
+
+
         switch (mCurrentModule) {
             case MODULE_USER:
                 items.remove(0);
@@ -460,17 +467,17 @@ public class CRUDDaoActivity extends AppCompatActivity {
                         });
                     }
                 });
-                PlaylistDao playlistDao = new PlaylistDao();
-                playlistDao.getAll(new RetrieValEventListener<List<Playlist>>() {
+                TypesDao typesDao = new TypesDao();
+                typesDao.getAll(new RetrieValEventListener<List<Types>>() {
                     @SuppressLint("ResourceType")
                     @Override
-                    public void OnDataRetrieved(List<Playlist> mPlaylists) {
-                        playlists = new ArrayList<>();
-                        playlists = (ArrayList<Playlist>) mPlaylists;
+                    public void OnDataRetrieved(List<Types> mType) {
+                        types1 = new ArrayList<>();
+                        types1 = (ArrayList<Types>) mType;
                         int position = 0;
-                        for (int i = 0; i < playlists.size(); i++) {
-                            String id = playlists.get(i).getId();
-                            String name = playlists.get(i).getName();
+                        for (int i = 0; i < types1.size(); i++) {
+                            String id = types1.get(i).getId();
+                            String name = types1.get(i).getName();
                             if (!isAdd && id.equals(song.getId())) {
                                 position = i;
                             }
@@ -492,6 +499,42 @@ public class CRUDDaoActivity extends AppCompatActivity {
                             public void onNothingSelected(AdapterView<?> arg0) {
                                 // TODO Auto-generated method stub
                                 spinnerDaoAdapter1.setSelectedItem(-1);
+                            }
+                        });
+                    }
+                });
+                ThemeDao themeDao = new ThemeDao();
+                themeDao.getAll(new RetrieValEventListener<List<Theme>>() {
+                    @SuppressLint("ResourceType")
+                    @Override
+                    public void OnDataRetrieved(List<Theme> mTheme) {
+                        themes = new ArrayList<>();
+                        themes = (ArrayList<Theme>) mTheme;
+                        int position = 0;
+                        for (int i = 0; i < themes.size(); i++) {
+                            String id = themes.get(i).getId();
+                            String name = themes.get(i).getName();
+                            if (!isAdd && id.equals(song.getId())) {
+                                position = i;
+                            }
+                            item2 = new Item(id, name);
+                            items2.add(item2);
+                        }
+                        spinnerDaoAdapter2 = new SpinnerDaoAdapter(CRUDDaoActivity.this, android.R.layout.simple_spinner_item, items2);
+                        spinnerDaoAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        spinners.get(2).setAdapter(spinnerDaoAdapter2);
+                        spinners.get(2).setSelection(position);
+                        spinners.get(2).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                            @SuppressLint("ResourceAsColor")
+                            @Override
+                            public void onItemSelected(AdapterView<?> arg0, View view, int arg2, long arg3) {
+                                spinnerDaoAdapter2.setSelectedItem(arg2);
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> arg0) {
+                                // TODO Auto-generated method stub
+                                spinnerDaoAdapter2.setSelectedItem(-1);
                             }
                         });
                     }
@@ -760,14 +803,15 @@ public class CRUDDaoActivity extends AppCompatActivity {
                     String id = editTexts.get(0).getText().toString();
                     String name = editTexts.get(1).getText().toString();
                     String image = editTexts.get(2).getText().toString();
-                    String idTheme = "";
-                    String idTypes = "";
+                    String idPlaylist = "";
                     item = (Item) spinners.get(0).getSelectedItem();
                     String idAlbum = item.getId();
                     item1 = (Item) spinners.get(1).getSelectedItem();
-                    String idPlaylist = item1.getId();
+                    String idTypes = item1.getId();
                     String singer = editTexts.get(3).getText().toString();
                     String linkSong = editTexts.get(4).getText().toString();
+                    String idTheme = item2.getId();
+                    item2 = (Item) spinners.get(2).getSelectedItem();
                     song = new Song(id, name, image, singer, idTheme, idTypes, idAlbum, idPlaylist, linkSong);
 
                     postDao();

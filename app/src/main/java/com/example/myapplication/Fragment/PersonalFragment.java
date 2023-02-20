@@ -45,7 +45,7 @@ public class PersonalFragment extends Fragment {
         gvLibary = view.findViewById(R.id.gvLibary);
         libaryAdapter = new LibaryAdapter(requireActivity(), R.layout.item_libary);
         gvLibary.setAdapter(libaryAdapter);
-        libaryAdapter.add(new Libary("1", getString(R.string.strHeaderSong), R.drawable.ic_baseline_personal_video_24));
+        libaryAdapter.add(new Libary("1", getString(R.string.strVideo), R.drawable.ic_baseline_personal_video_24));
         libaryAdapter.add(new Libary("2", getString(R.string.strHeaderOnDevice), R.drawable.ic_baseline_phone_android_24));
         libaryAdapter.add(new Libary("3", getString(R.string.strHeaderPlaylist), R.drawable.ic_baseline_playlist_play_24));
         libaryAdapter.add(new Libary("4", getString(R.string.strHeaderHistory), R.drawable.ic_baseline_content_paste_search_24));

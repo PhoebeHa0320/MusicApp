@@ -99,6 +99,7 @@
 
     <string name="strHeaderUser">User</string>
     <string name="strHeaderSong">Song</string>
+    <string name="strVideo">Video</string>
     <string name="strHeaderBanner">Banner</string>
     <string name="strHeaderAlbum">Album</string>
     <string name="strHeaderTheme">Theme</string>

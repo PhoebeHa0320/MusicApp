@@ -1,13 +1,41 @@
 package com.example.myapplication.Dao;
 
 import com.example.myapplication.Dao.Listeners.RetrieValEventListener;
+import com.example.myapplication.Dao.Listeners.TaskListener;
+import com.example.myapplication.Model.Album;
 import com.example.myapplication.Model.Theme;
 import com.google.firebase.database.DataSnapshot;
 
-public class ThemeDao extends FirebaseDao<Theme> {
+import java.util.List;
+
+public class ThemeDao extends FirebaseDao<Theme> implements IThemeDao{
     public ThemeDao(){
         // Specify the table name for the class
         super("theme");
+    }
+    @Override
+    public String getNewKey() {
+        return super.getNewKey();
+    }
+
+    @Override
+    public void getAll(RetrieValEventListener<List<Theme>> retrievalEventListener) {
+        super.getAll(retrievalEventListener);
+    }
+
+    @Override
+    public void get(String id, RetrieValEventListener<Theme> retrievalEventListener) {
+        super.get(id, retrievalEventListener);
+    }
+
+    @Override
+    public void save(Theme theme, String id, TaskListener taskListener) {
+        super.save(theme, id, taskListener);
+    }
+
+    @Override
+    public void delete(String id, TaskListener taskListener) {
+        super.delete(id, taskListener);
     }
 
     @Override

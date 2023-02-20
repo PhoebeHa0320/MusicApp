@@ -71,6 +71,7 @@
     <string name="strHeaderBanner">Ảnh bìa</string>
     <string name="strHeaderTheme">Chu đề</string>
     <string name="strHeaderTypes">Thể loại</string>
+    <string name="strVideo">Mv Ca nhạc</string>
     <string name="strHintName">Nhập vào tên</string>
     <string name="strHintImage">Nhập vào hình ảnh</string>
     <string name="strHeaderDateCreated">Ngày tạo</string>

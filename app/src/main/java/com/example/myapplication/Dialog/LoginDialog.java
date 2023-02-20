@@ -160,8 +160,7 @@ public class LoginDialog extends Dialog {
         accountTypes.add(new AccountType(2 + "", getString(R.string.strContinueGoogle), R.drawable.ic_google));
         accountTypes.add(new AccountType(3 + "", getString(R.string.strContinueFacebook), R.drawable.ic_facebook));
         accountTypes.add(new AccountType(4 + "", getString(R.string.strContinueTwitter), R.drawable.ic_twitter));
-        accountTypes.add(new AccountType(5 + "", getString(R.string.strContinueInstagram), R.drawable.ic_instagram));
-        accountTypes.add(new AccountType(6 + "", getString(R.string.strContinueLine), R.drawable.ic_line));
+
         int index = 0;
         int end = 3;
         for (int i = index; i < end; i++) {
