@@ -8,6 +8,8 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaMetadata;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -72,12 +74,14 @@ public class MyPlayMusicService extends Service {
                         .putString(MediaMetadata.METADATA_KEY_ARTIST, song.getSinger())
                         .build()
         );
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.empty_music);
         androidx.media.app.NotificationCompat.MediaStyle mediaStyle = new androidx.media.app.NotificationCompat.MediaStyle();
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle(song.getName())
                 .setContentText(song.getSinger())
+                .setLargeIcon(bitmap)
                 .setSmallIcon(R.drawable.ic_notification)
-                .setStyle(mediaStyle.setShowActionsInCompactView(0,1,2).setMediaSession(mediaSessionCompat.getSessionToken()));
+                .setStyle(mediaStyle.setShowActionsInCompactView(0,1,2,3).setMediaSession(mediaSessionCompat.getSessionToken()));
         if(isPlaying){
             notificationBuilder
                     .addAction(R.drawable.iconpreview,"Preview",getPendingIntent(this, ACTION_PREVIOUS))
