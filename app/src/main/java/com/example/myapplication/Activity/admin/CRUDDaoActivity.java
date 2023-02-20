@@ -939,7 +939,8 @@ public class CRUDDaoActivity extends AppCompatActivity {
                         editTexts.get(3).setText(song.getSinger());
                         editTexts.get(4).setText(song.getLinkSong());
                         spinners.get(0).setAdapter(spinnerDaoAdapter);
-                        spinners.get(1).setAdapter(spinnerDaoAdapter);
+                        spinners.get(1).setAdapter(spinnerDaoAdapter1);
+                        spinners.get(2).setAdapter(spinnerDaoAdapter2);
 
                         initData();
                     }
@@ -948,14 +949,15 @@ public class CRUDDaoActivity extends AppCompatActivity {
                 btnUpdate.setOnClickListener(view -> {
                     String name = editTexts.get(1).getText().toString();
                     String image = editTexts.get(2).getText().toString();
-                    String idTheme = "";
-                    String idTypes = "";
+                    String idPlaylist = "";
                     item = (Item) spinners.get(0).getSelectedItem();
                     String idAlbum = item.getId();
                     item1 = (Item) spinners.get(1).getSelectedItem();
-                    String idPlaylist = item1.getId();
+                    String idTypes = item1.getId();
                     String singer = editTexts.get(3).getText().toString();
                     String linkSong = editTexts.get(4).getText().toString();
+                    String idTheme = item2.getId();
+                    item2 = (Item) spinners.get(2).getSelectedItem();
                     song.update(name, image, singer, idTheme, idTypes, idAlbum, idPlaylist, linkSong);
 
                     repairDao();
