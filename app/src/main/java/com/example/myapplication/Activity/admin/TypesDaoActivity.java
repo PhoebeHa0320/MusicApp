@@ -102,7 +102,7 @@ public class TypesDaoActivity extends AppCompatActivity {
         //Toobar đã như ActionBar
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setTitle(R.string.strHeaderUser);
+        actionBar.setTitle(R.string.strHeaderTypes);
         lvPlayList = findViewById(R.id.listViewPlayListBaihatDao);
         tvTitlePlayList = findViewById(R.id.tvTitlePlayListBaihatDao);
 //        tvXemThem = findViewById(R.id.tvMorePlayListBaihatDao);
