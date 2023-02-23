@@ -7,6 +7,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
@@ -16,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 import com.example.myapplication.Activity.MainActivity;
+import com.example.myapplication.Dao.Listeners.EventListenersListener;
 import com.example.myapplication.Generic.Beans.NotifyObject;
 import com.example.myapplication.R;
 
@@ -94,24 +96,24 @@ public class MyDownloadService extends Service {
     }
 
     private void pauseOrResumeDownload() {
-//        Log.i("Info", "pauseDownload");
-//        // getting the static instance of activity
-//        MainActivity activity = MainActivity.instance;
-//        if (activity != null) {
-//            // we are calling here activity's method
-//            activity.pauseOrResumeDownload();
-//        }
+        Log.i("Info", "pauseDownload");
+        // getting the static instance of activity
+        MainActivity activity = MainActivity.instance;
+        if (activity != null) {
+            // we are calling here activity's method
+            activity.pauseOrResumeDownload();
+        }
 
     }
 
     private void cancelDownload() {
-//        Log.i("Info", "cancelDownload");
-//        // getting the static instance of activity
-//        MainActivity activity = MainActivity.instance;
-//        if (activity != null) {
-//            // we are calling here activity's method
-//            activity.cancelDownload();
-//        }
+        Log.i("Info", "cancelDownload");
+        // getting the static instance of activity
+        MainActivity activity = MainActivity.instance;
+        if (activity != null) {
+            // we are calling here activity's method
+            activity.cancelDownload();
+        }
     }
 
     public void initNotification(NotifyObject notifyObject) {
@@ -138,8 +140,8 @@ public class MyDownloadService extends Service {
                 .setCustomContentView(notificationLayout)
                 .setCustomBigContentView(notificationLayoutExpanded)
                 .setOnlyAlertOnce(true)
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .build();
-//                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
 
 //        notificationManager.notify(NOTIFICATION_ID, builder.build());
     }

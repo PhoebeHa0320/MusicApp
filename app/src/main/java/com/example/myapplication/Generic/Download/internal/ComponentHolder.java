@@ -27,9 +27,7 @@ import com.example.myapplication.Generic.Download.database.NoOpsDbHelper;
 import com.example.myapplication.Generic.Download.httpclient.DefaultHttpClient;
 import com.example.myapplication.Generic.Download.httpclient.HttpClient;
 
-/**
- * Created by amitshekhar on 14/11/17.
- */
+
 
 public class ComponentHolder {
 

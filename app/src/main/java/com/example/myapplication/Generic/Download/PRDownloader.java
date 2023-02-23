@@ -16,9 +16,6 @@
 
 package com.example.myapplication.Generic.Download;
 
-/**
- * Created by amitshekhar on 12/11/17.
- */
 
 import android.content.Context;
 

@@ -24,9 +24,7 @@ import com.example.myapplication.Generic.Download.Constants;
 import com.example.myapplication.Generic.Download.OnProgressListener;
 import com.example.myapplication.Generic.Download.Progress;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
+
 
 public class ProgressHandler extends Handler {
 

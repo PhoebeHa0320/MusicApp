@@ -23,9 +23,6 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
 
 public interface HttpClient extends Cloneable {
 

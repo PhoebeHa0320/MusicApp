@@ -36,9 +36,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
 
 public class DownloadTask {
 

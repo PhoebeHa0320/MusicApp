@@ -24,9 +24,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
 
 public class DownloadRequestQueue {
 

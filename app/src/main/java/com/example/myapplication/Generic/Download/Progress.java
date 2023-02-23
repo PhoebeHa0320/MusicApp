@@ -18,9 +18,7 @@ package com.example.myapplication.Generic.Download;
 
 import java.io.Serializable;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
+
 
 public class Progress implements Serializable {
 

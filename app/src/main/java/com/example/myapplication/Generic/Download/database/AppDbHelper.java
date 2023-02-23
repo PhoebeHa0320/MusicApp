@@ -25,9 +25,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by anandgaurav on 14-11-2017.
- */
+
 
 public class AppDbHelper implements DbHelper {
 

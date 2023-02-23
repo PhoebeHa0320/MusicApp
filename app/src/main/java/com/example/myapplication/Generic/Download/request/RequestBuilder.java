@@ -18,9 +18,7 @@ package com.example.myapplication.Generic.Download.request;
 
 import com.example.myapplication.Generic.Download.Priority;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
+
 
 public interface RequestBuilder {
 

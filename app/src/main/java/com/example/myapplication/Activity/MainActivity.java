@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static final int ROLE_ADMIN = 0;
     public static final int ROLE_USER = 1;
+    public static MainActivity instance;
 
     public int downloadId;
     public boolean downloading = false;

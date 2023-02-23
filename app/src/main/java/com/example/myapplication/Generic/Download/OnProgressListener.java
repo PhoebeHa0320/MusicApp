@@ -16,9 +16,6 @@
 
 package com.example.myapplication.Generic.Download;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
 
 public interface OnProgressListener {
 

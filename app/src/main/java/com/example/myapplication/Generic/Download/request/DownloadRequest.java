@@ -35,9 +35,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.Future;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
+
 
 public class DownloadRequest {
 

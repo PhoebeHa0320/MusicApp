@@ -16,9 +16,7 @@
 
 package com.example.myapplication.Generic.Download;
 
-/**
- * Created by amitshekhar on 15/11/17.
- */
+
 
 public enum Status {
 

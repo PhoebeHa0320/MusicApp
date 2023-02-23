@@ -18,9 +18,7 @@ package com.example.myapplication.Generic.Download.database;
 
 import java.util.List;
 
-/**
- * Created by anandgaurav on 14-11-2017.
- */
+
 
 public interface DbHelper {
 

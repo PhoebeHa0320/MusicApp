@@ -30,9 +30,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
+
 
 public class DefaultHttpClient implements HttpClient {
 

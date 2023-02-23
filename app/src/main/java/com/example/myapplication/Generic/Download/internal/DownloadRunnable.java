@@ -23,9 +23,7 @@ import com.example.myapplication.Generic.Download.Error;
 import com.example.myapplication.Generic.Download.request.DownloadRequest;
 
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
+
 
 public class DownloadRunnable implements Runnable {
 
