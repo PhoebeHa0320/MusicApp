@@ -18,9 +18,7 @@ package com.example.myapplication.Generic.Download.core;
 
 import java.util.concurrent.Executor;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
+
 
 public interface ExecutorSupplier {
 

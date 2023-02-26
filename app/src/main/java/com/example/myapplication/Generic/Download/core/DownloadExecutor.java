@@ -24,9 +24,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
+
 
 public class DownloadExecutor extends ThreadPoolExecutor {
 

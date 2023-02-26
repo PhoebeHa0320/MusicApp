@@ -21,9 +21,7 @@ import com.example.myapplication.Generic.Download.internal.DownloadRunnable;
 
 import java.util.concurrent.FutureTask;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
+
 
 public class DownloadFutureTask extends FutureTask<DownloadRunnable> implements Comparable<DownloadFutureTask> {
 

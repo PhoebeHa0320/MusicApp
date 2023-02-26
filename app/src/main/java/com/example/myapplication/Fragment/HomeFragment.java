@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment {
         Fragment childFragment = mFragmentMgr.findFragmentById(R.id.fragmentBaihat);
         assert childFragment != null;
         mTransaction.remove(childFragment);
-        mTransaction.commit();
+//        mTransaction.commit();
         super.onDestroyView();
     }
     private void LoadImageSlider() {

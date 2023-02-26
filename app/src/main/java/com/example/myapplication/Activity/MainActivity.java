@@ -36,6 +36,7 @@ import com.example.myapplication.Dialog.LoginDialog;
 import com.example.myapplication.Fragment.SearchFragment;
 import com.example.myapplication.Generic.Beans.NotifyObject;
 import com.example.myapplication.Generic.Download.PRDownloader;
+import com.example.myapplication.Generic.Download.database.DatabaseOpenHelper;
 import com.example.myapplication.Model.User;
 import com.example.myapplication.R;
 import com.example.myapplication.Service.MyDownloadService;
@@ -76,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static ImageView imgAvatar;
     Toolbar toolbar;
     Menu menuNav;
-
     Activity context;
     LoginDialog dialog;
     ChangePassworDialog changePassworDialog;
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         titles.add(getString(R.string.strHeaderExplore));
         mapping();
         init();
+
     }
 
     @Override

@@ -17,6 +17,7 @@
 package com.example.myapplication.Generic.Download.database;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -32,6 +33,15 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
+    public  void QueryData(String sql){
+        SQLiteDatabase database = getWritableDatabase();
+        database.execSQL(sql);
+    }
+
+    public Cursor GetData(String sql){
+        SQLiteDatabase database = getReadableDatabase();
+        return database.rawQuery(sql, null);
+    }
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " +

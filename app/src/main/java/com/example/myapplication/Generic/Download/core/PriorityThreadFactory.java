@@ -20,9 +20,7 @@ import android.os.Process;
 
 import java.util.concurrent.ThreadFactory;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
+
 
 public class PriorityThreadFactory implements ThreadFactory {
 

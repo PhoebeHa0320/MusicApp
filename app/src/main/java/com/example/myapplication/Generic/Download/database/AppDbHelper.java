@@ -30,7 +30,8 @@ import java.util.List;
 public class AppDbHelper implements DbHelper {
 
     public static final String TABLE_NAME = "prdownloader";
-    private final SQLiteDatabase db;
+//    private final SQLiteDatabase db;
+    public  SQLiteDatabase db;
 
     public AppDbHelper(Context context) {
         DatabaseOpenHelper databaseOpenHelper = new DatabaseOpenHelper(context);

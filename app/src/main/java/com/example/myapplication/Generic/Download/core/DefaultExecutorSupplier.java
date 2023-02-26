@@ -22,9 +22,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
-/**
- * Created by amitshekhar on 13/11/17.
- */
+
 
 public class DefaultExecutorSupplier implements ExecutorSupplier {
 
