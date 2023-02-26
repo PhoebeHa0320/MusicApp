@@ -58,7 +58,7 @@ public class ListMusicActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
-        //Toobar đã như ActionBar
+        //Toolbar đã như ActionBar
         assert actionBar != null;
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -74,7 +74,6 @@ public class ListMusicActivity extends AppCompatActivity {
         bundle.putSerializable("playlist", playlist);
         musicFragment.setArguments(bundle);
         ft.replace(R.id.fragmentBaihat, musicFragment);
-        // or ft.add(R.id.your_placeholder, new FooFragment());
         // Complete the changes added above
         ft.commit();
     }
