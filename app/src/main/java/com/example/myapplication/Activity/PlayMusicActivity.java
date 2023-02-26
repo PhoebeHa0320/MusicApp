@@ -505,7 +505,7 @@ public class PlayMusicActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-        mediaPlayer.stop();
+        mediaPlayer.reset();
         songs.clear();
     }
 }
